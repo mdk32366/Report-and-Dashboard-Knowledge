@@ -78,9 +78,9 @@ Now you can use this field in every standard report.  Use 'Ultimate Parent' as t
 
 [Standard Object ID Decoder](http://salesforcegenius.com/salesforce-object-id-prefixes-decoder-cereal-box-decoder-ring-salesforce-ids/)
 
-Use Tasks and Events type of report.  Group by User.  
+Use Tasks and Events type of report.  Grou
 
-This is placed against the "Related To" field in actvities:
+This is placed against the "Related To" record in actvities.  On the Activity Object, create a custom field called 'Related To' (Formula, Text)
 
 Formula: 
 
@@ -93,6 +93,7 @@ Formula:
        "Other"
        )
 
+Use the Activity by User. and you can some the activities for each user by the number of activities per user.  Matrix report with a bar chart makes a nice dashboard.
 
 ### Custom Time Slices for Opportunities (Standard report doesn't allow for much flexibility on time slicing.  You can create formulas that will do this for you without creating complex filters) (11/2/18)
 
