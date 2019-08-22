@@ -83,6 +83,20 @@ Note:- Charts can not be made on Tabular Reports as no grouping of data is avail
 Up to five blocks available.
 
 
+### Tracking Object/Field History
+
+[Audit Reports](https://success.salesforce.com/answers?id=90630000000gu0BAAQ)
+
+Click Your Name | Setup | Customize and select the object you want to configure.
+Click Fields.
+Click Set History Tracking.
+For accounts, contacts, leads, and opportunities, select the Enable Account History, Enable Contact History, Enable Lead History, or Enable Opportunity Field History checkbox. Deselect the checkbox if you do not want to track any changes. If you deselect the checkbox, the History related list is automatically removed from associated page layouts.
+This checkbox is not available for cases, solutions, or contracts because you cannot disable their history tracking. Certain changes, such as case escalation, are always tracked.
+
+When you choose the fields you want to track, Salesforce begins tracking history from that date and time forward. Changes made before that date and time are not included. Note that some case, solution, and contract fields are preselected for history tracking, so changes to those fields are automatically tracked from the time your organization began using Salesforce.
+Choose the fields you want tracked.
+Click Save.
+
 ## Dashboard Resources
 
 [Dashboards(Lightning)](https://help.salesforce.com/articleView?id=dashboards_create_lex.htm&type=5)
