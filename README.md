@@ -1,12 +1,22 @@
 # Report-and-Dashboard-Knowledge
 Capturing bacon-saving ideas that can be leveraged into other bacon-saving ideas
 
+[Reports Overview](https://help.salesforce.com/articleView?id=rd_reports_overview.htm&type=5)
+
 [Formulas and Operators](https://help.salesforce.com/articleView?id=customize_functions.htm&type=5)
+
+[Formulas: How do I . . . ](https://help.salesforce.com/articleView?id=how_do_i.htm&type=5)
+
+[Cross Object Formulas](https://help.salesforce.com/articleView?id=customize_cross_object.htm&type=5)
+
+[Reporting Snapshots](https://help.salesforce.com/articleView?id=data_defining_analytic_snap.htm&type=5)
+
+[Custom Report Types](https://help.salesforce.com/articleView?id=reports_defining_report_types.htm&type=5)
 
 ### Formula Debugging Tips
 1.  For long formulas that don't pass validation, start small, validate, add more, validate.  This way you can isolate exactly where the error springs from.
 
-### Ultimate Parent Account Field
+### Ultimate Parent Account Field (2/7/18)
 You can create a custom field which will place all children accounts no matter how far down under the top-level of account or campaign using the Blankvalue operator.
 
 Standard Parent Account Field or Campaign Field only goes up one level.  You can use this formula to return either a blank value if there is no Parent, or it will nest all the children and subchildren below the 'Ultimate' Parent Account/Campaign.
@@ -33,7 +43,7 @@ Formula field on Account (or Campaign): "Ulimate Parent Account" (Add it to the 
 
 Now you can use this field in every standard report.  Use 'Ultimate Parent' as the Grouping field.
 
-### Activity Reports (What objects are users logging their activities against.  Standard activity report only allows you to report activities object by object)
+### Activity Reports (What objects are users logging their activities against.  Standard activity report only allows you to report activities object by object)  (3/20/18)
 
 [Standard Field ID Decoder](https://help.salesforce.com/articleView?id=000325244&language=en_US&type=1&mode=1)
 
@@ -53,7 +63,7 @@ Formula:
        )
 
 
-### Custom Time Slices for Opportunities (Standard report doesn't allow for much flexibility on time slicing.  You can create formulas that will do this for you without creating complex filters)
+### Custom Time Slices for Opportunities (Standard report doesn't allow for much flexibility on time slicing.  You can create formulas that will do this for you without creating complex filters) (11/2/18)
 
 Formula against CloseDate: You'll need to create custom fields on Opportunity using variations on these Formulas, and then call them up in the standard Opportunity Summary Report.  Use the custom field to group, or as a column.  Reusable.  You can get a Summary report that looks like a Matrix Report.
 
@@ -73,7 +83,7 @@ Formula against CloseDate: You'll need to create custom fields on Opportunity us
         0
       )
 
-### Counts of Open & Lost Opportunities
+### Counts of Open & Lost Opportunities (11/2/18)
 
 Opportunity Object has fields that count whether an Opp is closed (IsClosed) or won (IsWon), but not 'Open' or 'Lost'.  Open would be Opps that are Not(IsClosed) and Not(IsWon).  Lost would be Opps that are IsClosed and Not(IsWon).  This gives BDMs and Inside sales people an idea of what is open, or what the customer attrition rate is (IsClosed and Not(IsWon)(Use this with Opportunties with Clients).
 
@@ -109,8 +119,8 @@ Stores a zero or a one in the field.
 
 Use a SUM column and use these two new fields in the Opportunity Pipeline Reports.  You can also create new ratios for loss percentage, etc  Use a Custom Summary Formula Column in the OPR.  [Custom Summary Formula Field](https://help.salesforce.com/articleView?id=building_custom_summary_formulas.htm&type=5).
 
-### Custom Buckets
-[Bucket Fields](https://help.salesforce.com/articleView?id=reports_bucketing_overview.htm&type=5)
+### Custom Buckets (1/22/19)
+[Bucket Columns](https://help.salesforce.com/articleView?id=reports_bucketing_overview.htm&type=5)
 
 Standard Salesforce Buckets: Numeric, Picklist, Text.  No need for a custom formula.
 Issue: With C-Level and Sales Manager Level type reporting, when someone new comes in and wants reports differently, you have to change a bunch of reports.
@@ -126,10 +136,11 @@ Solution:  Bucket field custom field on the Opportunity Object.  New person, new
           )
       )
   
-  ### Custom Report Types
+  ### Custom Report Types (4/4/19)
   
-  Good example is an Activity Report that reports Activities across all Standard Objects.  Standard reports give you an activity report per standard object.
+Good example is an Activity Report that reports Activities across all Standard Objects.  Standard reports give you an activity report per standard object.
   
+
   
 
 
