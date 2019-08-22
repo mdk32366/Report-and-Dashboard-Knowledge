@@ -26,6 +26,10 @@ Up to five blocks available.
 
 [Dashboards(Lightning)](https://help.salesforce.com/articleView?id=dashboards_create_lex.htm&type=5)
 
+### Report Debugging Tips
+1. It does not meet the scope or filter criteria of the Report
+2. The User does not have at least Read access to it
+3. It does not exist
 
 
 ### Formula Debugging Tips
@@ -73,6 +77,8 @@ Now you can use this field in every standard report.  Use 'Ultimate Parent' as t
 [Standard Field ID Decoder](https://help.salesforce.com/articleView?id=000325244&language=en_US&type=1&mode=1)
 
 [Standard Object ID Decoder](http://salesforcegenius.com/salesforce-object-id-prefixes-decoder-cereal-box-decoder-ring-salesforce-ids/)
+
+Use Tasks and Events type of report.  Group by User.  
 
 This is placed against the "Related To" field in actvities:
 
