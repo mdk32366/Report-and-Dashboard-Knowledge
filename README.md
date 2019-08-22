@@ -1,6 +1,8 @@
 # Report-and-Dashboard-Knowledge
 Capturing bacon-saving ideas that can be leveraged into other bacon-saving ideas
 
+## Report Resources
+
 [Reports Overview](https://help.salesforce.com/articleView?id=rd_reports_overview.htm&type=5)
 
 [Formulas and Operators](https://help.salesforce.com/articleView?id=customize_functions.htm&type=5)
@@ -13,8 +15,28 @@ Capturing bacon-saving ideas that can be leveraged into other bacon-saving ideas
 
 [Custom Report Types](https://help.salesforce.com/articleView?id=reports_defining_report_types.htm&type=5)
 
+[Joined Reports in Lightning!](https://releasenotes.docs.salesforce.com/en-us/summer18/release-notes/rn_rd_joined_reports.htm)
+
+Up to five blocks available.
+
+
+## Dashboard Resources
+
+[Dashboards(Lightning)](https://help.salesforce.com/articleView?id=dashboards_create_lex.htm&type=5)
+
+
+
 ### Formula Debugging Tips
 1.  For long formulas that don't pass validation, start small, validate, add more, validate.  This way you can isolate exactly where the error springs from.
+
+### Dashboard Debugging Tips
++  Are the reports in a folder that the target audience can see?
++  What folder is the dashboard in?  Is it in a folder such that it can be accessed by the right audience and not by the wrong audience?
++  If the information in the report is sensitive, is a running user indicated for the report?
++  Use reports with no filters on them, and add the filters you want to the dashboard you create.
++  Make sure you've included all groups and add any summarizations to any of the columns you want to access in the dashboard.  If they aren't there, then you can't access them in the dashboard.
++  Don't forget to add your filters (stage, probability, close date, age . . )
+
 
 ### Ultimate Parent Account Field (2/7/18)
 You can create a custom field which will place all children accounts no matter how far down under the top-level of account or campaign using the Blankvalue operator.
@@ -136,12 +158,22 @@ Solution:  Bucket field custom field on the Opportunity Object.  New person, new
           )
       )
   
-  ### Custom Report Types (4/4/19)
+### Reporting Snapshots
   
-Good example is an Activity Report that reports Activities across all Standard Objects.  Standard reports give you an activity report per standard object.
-  
+Used for looking at the change in multiple fields over time.
 
-  
+1.  Use a standard report. (Tabular or Summary)
+2.  Build a custom object. (Allow reports, and select 'deployed')
+  Make sure you include 'snapshot' in the name of the object so that you know what the Custom Object is being used for, and the type of fields in the Custom Object have to match the types in your source report.
+3. Map the fields from the report to the fields in the target object.
+Note: Use 'Execution Time' mapped to name of the record on custom object
+
+Schedule a reporting interval.
+
+Now this can be accessed as a related list on the Custom Object too.
+
+
+
 
 
 
