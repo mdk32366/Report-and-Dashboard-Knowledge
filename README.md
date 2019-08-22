@@ -56,6 +56,11 @@ Note:- Charts can not be made on Tabular Reports as no grouping of data is avail
 
 ### Joined Reports in Lightning
 + Only available in Enterprise and Unlimited (and Developer)
++ Exception reporting not allowed.  Example: Accounts WITHOUT Activities, Accounts WITHOUT Contacts.
+
+[Joined Report Limitations](https://help.salesforce.com/articleView?id=reports_unavailable_with_joined_reports.htm&type=5)
+
+[Joined Report Examples (Mostly for Classic, but should work now in Lightning)](https://help.salesforce.com/articleView?id=reports_examples_joined.htm&type=5)
 
 ## Report Resources
 
