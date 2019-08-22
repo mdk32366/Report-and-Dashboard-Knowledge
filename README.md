@@ -1,5 +1,6 @@
 # Report-and-Dashboard-Knowledge
 Capturing bacon-saving ideas that can be leveraged into other bacon-saving ideas
+
 [Formulas and Operators](https://help.salesforce.com/articleView?id=customize_functions.htm&type=5)
 
 ### Formula Debugging Tips
@@ -34,6 +35,7 @@ Now you can use this field in every standard report.  Use 'Ultimate Parent' as t
 ### Activity Reports (What objects are users logging their activities against.  Standard activity report only allows you to report activities object by object)
 
 [Standard Field ID Decoder](https://help.salesforce.com/articleView?id=000325244&language=en_US&type=1&mode=1)
+
 [Standard Object ID Decoder](http://salesforcegenius.com/salesforce-object-id-prefixes-decoder-cereal-box-decoder-ring-salesforce-ids/)
 
 This is placed against the "Related To" field in actvities:
