@@ -22,13 +22,14 @@ BLANKVALUE is the key.  Determines if an expression has a value and returns a su
 To make sure your formula takes in enough levels of parents, use the 'Insert Field' function to click on 'Parent Account' going up enough levels until you reach the top level account and then use the Insert button to grab that level.
 
 Formula field on Account (or Campaign): "Ulimate Parent Account" (Add it to the Layout)
-BLANKVALUE(Parent.Parent.Parent.Parent.Parent.Parent.Name,
-BLANKVALUE(Parent.Parent.Parent.Parent.Parent.Name,
-BLANKVALUE(Parent.Parent.Parent.Parent.Name,
-BLANKVALUE(Parent.Parent.Parent.Name,
-BLANKVALUE(Parent.Parent.Name,
-BLANKVALUE(Parent.Name,
-Name))))))
+
+    BLANKVALUE(Parent.Parent.Parent.Parent.Parent.Parent.Name,
+    BLANKVALUE(Parent.Parent.Parent.Parent.Parent.Name,
+    BLANKVALUE(Parent.Parent.Parent.Parent.Name,
+    BLANKVALUE(Parent.Parent.Parent.Name,
+    BLANKVALUE(Parent.Parent.Name,
+    BLANKVALUE(Parent.Name,
+    Name))))))
 
 Now you can use this field in every standard report.  Use 'Ultimate Parent' as the Grouping field.
 
@@ -40,13 +41,17 @@ Now you can use this field in every standard report.  Use 'Ultimate Parent' as t
 
 This is placed against the "Related To" field in actvities:
 
-Formula: CASE(
-           LEFT(WhatId, 3),
-           "001","Account",
-           "500","Case",
-           "006","Opportunity",
-           "xxx","Custom Object Here",
-           "Other"
+Formula: 
+
+    CASE(
+       LEFT(WhatId, 3),
+       "001","Account",
+       "500","Case",
+       "006","Opportunity",
+       "xxx","Custom Object Here",
+       "Other"
+       )
+
 
 ### Custom Time Slices for Opportunities (Standard report doesn't allow for much flexibility on time slicing.  You can create formulas that will do this for you without creating complex filters)
 
@@ -54,19 +59,19 @@ Formula against CloseDate: You'll need to create custom fields on Opportunity us
 
 #### Month by Month (February)
 
-If(
-  MONTH(CloseDate) = 2,
-  Amount,
-  0
-  )
+    If(
+      MONTH(CloseDate) = 2,
+      Amount,
+      0
+      )
   
   #### Quarterly (Q4)
   
-  If(
-    Month(CloseDate) >= 10,
-    Amount,
-    0
-    )
+    If(
+        Month(CloseDate) >= 10,
+        Amount,
+        0
+      )
 
 ### Counts of Open & Lost Opportunities
 
@@ -80,22 +85,24 @@ Open Custom Field:
 Datatype: Formula
 Return Type: Checkbox
 Formula:
-IsClosed = FALSE
+
+    IsClosed = FALSE
 
 or
 
-NOT(IsClosed)
+    NOT(IsClosed)
 
 Lost Custom Field:
 Datatype: Formula
 Return Type: Checkbox
 Formula:
-AND(IsClosed = TRUE,
+
+    AND(IsClosed = TRUE,
       IsWon = FALSE)
       
-      or
+ Or
 
-And(IsClosed,
+    And(IsClosed,
      NOT(IsWon))
      
 Stores a zero or a one in the field.  
@@ -110,14 +117,14 @@ Issue: With C-Level and Sales Manager Level type reporting, when someone new com
 
 Solution:  Bucket field custom field on the Opportunity Object.  New person, new criteria, just change the formula in the custom field.
 
-IF(
-    Amount > 100000,
-    "Large Account"
     IF(
-    Amount > 50000,
-    "Standard Account"
-    )
-  )
+        Amount > 100000,
+        "Large Account"
+        IF(
+            Amount > 50000,
+            "Standard Account"
+          )
+      )
   
   ### Custom Report Types
   
