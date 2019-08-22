@@ -15,6 +15,8 @@ Capturing bacon-saving ideas that can be leveraged into other bacon-saving ideas
 
 [Custom Report Types](https://help.salesforce.com/articleView?id=reports_defining_report_types.htm&type=5)
 
+[Subscribing to Reports and Dashboards](https://help.salesforce.com/articleView?id=reports_subscribe_overview.htm&type=5)
+
 [Joined Reports in Lightning!](https://releasenotes.docs.salesforce.com/en-us/summer18/release-notes/rn_rd_joined_reports.htm)
 
 Up to five blocks available.
@@ -36,6 +38,7 @@ Up to five blocks available.
 +  Use reports with no filters on them, and add the filters you want to the dashboard you create.
 +  Make sure you've included all groups and add any summarizations to any of the columns you want to access in the dashboard.  If they aren't there, then you can't access them in the dashboard.
 +  Don't forget to add your filters (stage, probability, close date, age . . )
++  For Date filters, use RELATIVE date types (next month, next quarter, next fiscal quarter, this month, etc.)
 
 
 ### Ultimate Parent Account Field (2/7/18)
